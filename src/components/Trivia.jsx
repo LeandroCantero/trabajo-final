@@ -1,10 +1,12 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 
 const Trivia = ({ trivia, getApiTrivia }) => {
   const inputRef = useRef(null);
   const [answer, setAnswer] = useState("");
   const [isTrue, setIsTrue] = useState(0);
-  const [counter, setCounter] = useState(0);
+  const initialCounter = () =>
+    Number(window.localStorage.getItem("counter")) || 0;
+  const [counter, setCounter] = useState(initialCounter);
   const [lastTrivia, setLastTrivia] = useState("");
   const [reset, setReset] = useState(true);
 
@@ -63,6 +65,10 @@ const Trivia = ({ trivia, getApiTrivia }) => {
       handleClick();
     }
   };
+
+  useEffect(() => {
+    window.localStorage.setItem("counter", counter);
+  }, [counter]);
 
   return (
     <div className="mt-4 flex flex-col items-center">
