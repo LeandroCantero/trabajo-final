@@ -126,7 +126,7 @@ const Trivia = ({ trivia, getApiTrivia }) => {
       </button>
       <p className="mt-10 font-semibold">
         Respuesta oculta (bueno... no tan oculta):{" "}
-        <span className="text-fifth bg-slate-100">{trivia.answer}</span>
+        <span className="text-fifth">{trivia.answer}</span>
       </p>
     </div>
   );

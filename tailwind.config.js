@@ -11,7 +11,7 @@ module.exports = {
         secondary: "#144272",
         third: "#205295",
         fourth: "#2C74B3",
-        fifth: "#F0F3BD",
+        fifth: "#fbffc7",
         semiWhite: "#f7f7f7",
       },
       spacing: {
