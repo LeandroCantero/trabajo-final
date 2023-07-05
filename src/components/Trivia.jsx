@@ -66,7 +66,7 @@ const Trivia = ({ trivia, getApiTrivia }) => {
   return (
     <div className="mt-4 flex flex-col items-center">
       <button
-        className="rounded bg-secondary p-2 font-bold text-white mb-8"
+        className="rounded bg-secondary p-2 font-bold text-white mb-8 hover:bg-fourth transition-all ease-in-out duration-500"
         onClick={() => {
           getApiTrivia();
           handleClear();
@@ -90,7 +90,7 @@ const Trivia = ({ trivia, getApiTrivia }) => {
           onKeyDown={handleKeyDown}
         />
         <button
-          className="rounded bg-secondary p-2 font-bold text-white ml-4"
+          className="rounded bg-secondary p-2 font-bold text-white ml-4 hover:bg-fourth transition-all ease-in-out duration-500"
           onClick={handleClick}
         >
           Enviar
@@ -113,7 +113,7 @@ const Trivia = ({ trivia, getApiTrivia }) => {
         <span className="text-third text-xl">{counter}</span>
       </h3>
       <button
-        className="rounded bg-fourth p-2 font-bold text-white mt-8"
+        className="rounded bg-fourth p-2 font-bold text-white mt-8 hover:bg-main transition-all ease-in-out duration-500"
         onClick={handleReset}
       >
         Reiniciar

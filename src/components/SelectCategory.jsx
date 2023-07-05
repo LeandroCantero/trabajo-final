@@ -28,7 +28,7 @@ const SelectCategory = ({ options }) => {
   };
 
   return (
-    <div className="flex items-center	justify-center w-full h-screen flex-col bg-white">
+    <div className="flex items-center	justify-center w-full h-screen flex-col bg-secondary">
       <div className="rounded shadow-2xl bg-semiWhite flex items-center justify-center flex-col w-3/6 h-5/6">
         <div className="flex flex-col items-center">
           <p className="text-secondary font-bold text-2xl mb-12">
