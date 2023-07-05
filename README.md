@@ -5,10 +5,10 @@ Trivia loca es un juego básico de preguntas. Seleccionás un género, preguntá
 
 
 
-## 
+## Demo
 
 ![image](https://github.com/LeandroCantero/trabajo-final/assets/42678932/47c5fa0b-3bd4-42c1-b286-febbdbc94cb9)
-
+https://trivia-loca.netlify.app/
 
 
 ## Tecnologías utilizadas
@@ -22,6 +22,31 @@ Para correr este proyecto tenés que tener una variable de entorno en tu archivo
 
 `REACT_APP_API_KEY`
 
+## Correr de manera local
+
+Clonar el proyecto
+
+```bash
+  git clone https://link-to-project
+```
+
+Ir al directorio del proyecto
+
+```bash
+  cd my-project
+```
+
+Instalar dependencias
+
+```bash
+  npm install
+```
+
+Iniciar
+
+```bash
+  npm run start
+```
 
 ## API Utilizada
 
