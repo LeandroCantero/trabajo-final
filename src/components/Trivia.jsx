@@ -32,7 +32,7 @@ const Trivia = ({ trivia, getApiTrivia }) => {
   }
 
   function handleClick() {
-    const newAnswer = inputRef.current.value.toLowerCase();
+    const newAnswer = inputRef.current.value.toLowerCase().trim();
     setAnswer(newAnswer);
     isCorrect(newAnswer);
     saveLastTrivia();
@@ -75,15 +75,11 @@ const Trivia = ({ trivia, getApiTrivia }) => {
       >
         Preguntar
       </button>
-      <p className="mb-10">
-        {reset ? (
-          <span className="text-slate-400">Pregunta...</span>
-        ) : (
-          trivia.question
-        )}
+      <p className="mb-10 font-semibold text-secondary text-2xl w-4/5">
+        {reset ? "" : trivia.question}
       </p>
-      <div className="mb-6">
-        <p className="font-bold">Respuesta: </p>
+      <div className="my-6">
+        <p className="font-bold mb-3">Respuesta: </p>
         <input
           className="border-b-2 border-b-secondary outline-0 shadow-md p-2"
           ref={inputRef}

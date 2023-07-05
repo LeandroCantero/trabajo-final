@@ -6,7 +6,6 @@ import { useState } from "react";
 const SelectCategory = ({ options }) => {
   const [selectedOption, setSelectedOption] = useState(null);
   const [trivia, setTrivia] = useState("");
-  const [errorM, setErrorM] = useState("");
   const [isError, setIsError] = useState(false);
 
   const getApiTrivia = async () => {
@@ -25,22 +24,27 @@ const SelectCategory = ({ options }) => {
       setIsError(false);
     } catch (error) {
       setIsError(true);
-      setErrorM("Debes seleccionar una categoría para empezar a jugar");
     }
   };
 
   return (
-    <div className="flex items-center	justify-center w-full h-screen flex-col">
-      <div className="rounded shadow-2xl bg-semiWhite flex items-center justify-center flex-col w-3/6 h-4/6">
+    <div className="flex items-center	justify-center w-full h-screen flex-col bg-white">
+      <div className="rounded shadow-2xl bg-semiWhite flex items-center justify-center flex-col w-3/6 h-5/6">
         <div className="flex flex-col items-center">
-          <p className="text-red-600 font-semibold absolute top-72">
-            {isError && errorM}
+          <p className="text-secondary font-bold text-2xl mb-12">
+            Seleccionar categoría:
           </p>
           <Select
             defaultValue={selectedOption}
             onChange={setSelectedOption}
             options={options}
-            className="w-52 mt-4"
+            className="w-52"
+            styles={{
+              control: (baseStyles) => ({
+                ...baseStyles,
+                borderColor: isError ? "red" : "grey",
+              }),
+            }}
           />
         </div>
         <Trivia trivia={trivia} getApiTrivia={getApiTrivia} />
