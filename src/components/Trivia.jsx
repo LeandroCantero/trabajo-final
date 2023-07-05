@@ -104,11 +104,17 @@ const Trivia = ({ trivia, getApiTrivia }) => {
         <h3>Epa, esa ya la respondiste, tramposo</h3>
       ) : (
         <>
-          <h3>¡Perdiste! La respuesta correcta es: {trivia.answer}</h3>
+          <h3>
+            {" "}
+            <span className="text-red-500 font-semibold text-lg">
+              ¡Perdiste!
+            </span>{" "}
+            La respuesta correcta es: {trivia.answer}
+          </h3>
         </>
       )}
 
-      <h3 className="font-semibold text-center">
+      <h3 className="font-semibold text-center mt-8">
         Respuestas correctas: <br />
         <span className="text-third text-xl">{counter}</span>
       </h3>
