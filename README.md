@@ -7,8 +7,8 @@ Trivia loca es un juego básico de preguntas. Seleccionás un género, preguntá
 
 ## 
 
-![App Screenshot](![image](https://github.com/LeandroCantero/trabajo-final/assets/42678932/17545391-81eb-4656-9254-da1dec1580d5)
-)
+![image](https://github.com/LeandroCantero/trabajo-final/assets/42678932/47c5fa0b-3bd4-42c1-b286-febbdbc94cb9)
+
 
 
 ## Tecnologías utilizadas
