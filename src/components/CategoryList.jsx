@@ -6,16 +6,16 @@ function CategoryList() {
     { value: "general", label: "General" },
     { value: "music", label: "Music" },
     { value: "language", label: "Language" },
-    { value: "sciencenature", label: "Sciencenature" },
-    { value: "fooddrink", label: "Fooddrink" },
-    { value: "peopleplaces", label: "Peopleplaces" },
+    { value: "sciencenature", label: "Science & Nature" },
+    { value: "fooddrink", label: "Food & Drink" },
+    { value: "peopleplaces", label: "People & Places" },
     { value: "geography", label: "Geography" },
-    { value: "historyholidays", label: "Historyholidays" },
+    { value: "historyholidays", label: "History & Holidays" },
     { value: "entertainment", label: "Entertainment" },
-    { value: "toysgames", label: "Toysgames" },
+    { value: "toysgames", label: "Toys & Games" },
     { value: "mathematics", label: "Mathematics" },
-    { value: "religionmythology", label: "Religionmythology" },
-    { value: "sportsleisure", label: "Sportsleisure" },
+    { value: "religionmythology", label: "Religion & Mythology" },
+    { value: "sportsleisure", label: "Sports & Leisure" },
   ];
   return (
     <>

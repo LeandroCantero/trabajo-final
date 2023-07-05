@@ -9,11 +9,15 @@ const Trivia = ({ trivia, getApiTrivia }) => {
   const [reset, setReset] = useState(true);
 
   function isCorrect(newAnswer) {
+    if (trivia.question === undefined) {
+      return;
+    }
     if (lastTrivia === trivia.question) {
       setIsTrue(3);
       return;
     }
-    if (newAnswer === trivia.answer) {
+
+    if (newAnswer === trivia.answer.toLowerCase()) {
       if (answer !== newAnswer) {
         setIsTrue(1);
         setCounter(counter + 1);
@@ -28,7 +32,7 @@ const Trivia = ({ trivia, getApiTrivia }) => {
   }
 
   function handleClick() {
-    const newAnswer = inputRef.current.value;
+    const newAnswer = inputRef.current.value.toLowerCase();
     setAnswer(newAnswer);
     isCorrect(newAnswer);
     saveLastTrivia();
@@ -53,10 +57,16 @@ const Trivia = ({ trivia, getApiTrivia }) => {
     handleClear();
   }
 
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      handleClick();
+    }
+  };
+
   return (
     <div className="mt-4 flex flex-col items-center">
       <button
-        className="rounded bg-cyan-500 p-2 font-bold text-white mb-8"
+        className="rounded bg-secondary p-2 font-bold text-white mb-8"
         onClick={() => {
           getApiTrivia();
           handleClear();
@@ -73,17 +83,18 @@ const Trivia = ({ trivia, getApiTrivia }) => {
         )}
       </p>
       <div className="mb-6">
-        <p>Respuesta: </p>
+        <p className="font-bold">Respuesta: </p>
         <input
-          className="border-b-2 border-b-cyan-900 outline-0 shadow-md p-2"
+          className="border-b-2 border-b-secondary outline-0 shadow-md p-2"
           ref={inputRef}
           name="answer"
           type="text"
           id="answer"
           autoComplete="off"
+          onKeyDown={handleKeyDown}
         />
         <button
-          className="rounded bg-green-600 p-2 font-bold text-white ml-4"
+          className="rounded bg-secondary p-2 font-bold text-white ml-4"
           onClick={handleClick}
         >
           Enviar
@@ -101,14 +112,20 @@ const Trivia = ({ trivia, getApiTrivia }) => {
         </>
       )}
 
-      <h3>Respuestas correctas: {counter}</h3>
+      <h3 className="font-semibold text-center">
+        Respuestas correctas: <br />
+        <span className="text-third text-xl">{counter}</span>
+      </h3>
       <button
-        className="rounded bg-cyan-500 p-2 font-bold text-white mt-8"
+        className="rounded bg-fourth p-2 font-bold text-white mt-8"
         onClick={handleReset}
       >
         Reiniciar
       </button>
-      <p>{trivia.answer}</p>
+      <p className="mt-10 font-semibold">
+        Respuesta oculta (bueno... no tan oculta):{" "}
+        <span className="text-fifth bg-slate-300">{trivia.answer}</span>
+      </p>
     </div>
   );
 };

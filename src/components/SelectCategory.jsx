@@ -30,16 +30,18 @@ const SelectCategory = ({ options }) => {
   };
 
   return (
-    <div className="flex items-center	justify-center w-full h-screen flex-col	">
-      <div className="border-2 shadow-lg flex items-center justify-center flex-col w-3/6 h-4/6">
-        <div className="flex justify-center">
+    <div className="flex items-center	justify-center w-full h-screen flex-col">
+      <div className="rounded shadow-2xl bg-semiWhite flex items-center justify-center flex-col w-3/6 h-4/6">
+        <div className="flex flex-col items-center">
+          <p className="text-red-600 font-semibold absolute top-72">
+            {isError && errorM}
+          </p>
           <Select
             defaultValue={selectedOption}
             onChange={setSelectedOption}
             options={options}
-            className="w-48"
+            className="w-52 mt-4"
           />
-          <p>{isError && errorM}</p>
         </div>
         <Trivia trivia={trivia} getApiTrivia={getApiTrivia} />
       </div>
