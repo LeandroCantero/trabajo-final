@@ -24,6 +24,7 @@ const Trivia = ({ trivia, getApiTrivia }) => {
       }
     } else {
       setIsTrue(2);
+      setCounter(0);
     }
   }
 
